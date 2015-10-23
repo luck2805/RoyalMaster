@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2015 10:18:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.royalmaster.royalmaster.entities.Visualizaciones" table="visualizaciones" catalog="RoyalMaster" optimistic-lock="version">
+        <id name="idVisualizacion" type="java.lang.Integer">
+            <column name="idVisualizacion" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="peliculasXcliente" class="com.royalmaster.royalmaster.entities.PeliculasXcliente" fetch="select">
+            <column name="idPeliculasXCliente" not-null="true" />
+        </many-to-one>
+        <property name="fechaVisualizacion" type="string">
+            <column name="fechaVisualizacion" length="45" not-null="true" />
+        </property>
+        <property name="visualizacionescol" type="timestamp">
+            <column name="visualizacionescol" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

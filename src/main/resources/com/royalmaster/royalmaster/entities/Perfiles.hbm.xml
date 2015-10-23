@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2015 10:18:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.royalmaster.royalmaster.entities.Perfiles" table="perfiles" catalog="RoyalMaster" optimistic-lock="version">
+        <id name="idPerfil" type="java.lang.Integer">
+            <column name="idPerfil" />
+            <generator class="identity" />
+        </id>
+        <property name="tipoUsuario" type="string">
+            <column name="tipoUsuario" length="45" not-null="true" />
+        </property>
+        <set name="usuarioses" table="usuarios" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idPerfil" not-null="true" />
+            </key>
+            <one-to-many class="com.royalmaster.royalmaster.entities.Usuarios" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html class="fondo1" xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      >
+    <h:head>
+        <title>Header - Royal Master</title>
+        <link rel="shortcut icon" href="resources/icons/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="styles.css" />
+        <h:outputStylesheet library="css" name="animate.css" />
+        <h:outputStylesheet library="css" name="bootstrap.css" />
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{mbSession.checkSession()}" />
+        </f:metadata>
+    </h:head>
+    <h:body styleClass="fondo1">
+        <link rel="shortcut icon" href="#{request.contextPath}/icons/logo.png" />
+        <h:form>
+            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+                <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                    <p:graphicImage library="img" name="loading.gif" width="32" />
+                </p:dialog>
+            <b:navBar fluid="true" static="true"  brand="Royal Master" brandHref="#{request.contextPath}">
+            <b:navbarLinks>
+                <b:dropMenu value="Menu">
+                    <b:navLink>
+                        <li>
+                            <a href="#{request.contextPath}/acceso.xhtml" role="menuitem" tabindex="-1"><b:iconAwesome name="plus" /> Editar Perfil</a>
+                        </li>
+                    </b:navLink>
+                    <b:navLink value="">
+                        <li>
+                            <a href="#{request.contextPath}/acceso.xhtml" role="menuitem" tabindex="-1"><b:iconAwesome name="child" /> Ver Peliculas</a>
+                        </li>
+                    </b:navLink>
+                    <b:navLink value="">
+                        <li>
+                            <a href="#{request.contextPath}/acceso.xhtml" role="menuitem" tabindex="-1" ><b:iconAwesome name="gear" /> Buscar Peliculas</a>
+                        </li>
+                    </b:navLink>
+                    <b:navLink value="">
+                        <li>
+                            <a href="#{request.contextPath}/acceso.xhtml" role="menuitem" tabindex="-1" ><b:iconAwesome name="hospital-o" /> Comprar Peliculas</a>
+                        </li>
+                    </b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            <b:navbarLinks pull="right">
+                <b:navLink icon="close">
+                    <li>
+                        <h:commandLink action="#{mbSession.cerrarSession()}" value="Cerrar sesión" role="menuitem" tabindex="-1" />    
+                    </li>
+                </b:navLink>
+            </b:navbarLinks>
+        </b:navBar>
+        </h:form>
+    </h:body>
+</html>

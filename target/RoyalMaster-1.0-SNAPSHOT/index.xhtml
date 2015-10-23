@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="html_add" xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"    
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Inicio</title>
+        <link rel="shortcut icon" href="resources/icons/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/css/bootstrap.css" />
+        <link rel="stylesheet" href="resources/css/styles.css" />
+        <link rel="stylesheet" href="resources/css/animate.css" />
+        <h:outputScript library="js" name="jquery.js" />
+        <h:outputScript library="js" name="bootstrap.js" />
+    </h:head>
+    <h:body styleClass="html_add">
+        <style>
+                .html_add{
+                    background: url("#{resource['img:fondo35.jpg']}") no-repeat center center fixed; 
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                        -o-background-size: cover;
+                    background-size: cover;
+                }
+            </style>
+        <section class="contenedorLogin animated flipInX" style="background-color: rgb(223,228,230)">
+            <h:form class="formulario">
+                <h2 class="text-center">Bienvenido a Royal Master</h2>
+                <img src="resources/img/people.png" class="img-responsive center-margin" style="width:128px;" />
+                <p><h:outputLabel for="txtUser">Usuario</h:outputLabel></p>
+<!--                <p><h:inputText styleClass="form-control" id="txtUser" value="#{mbLogin.usuario}" /></p>-->
+                <p><b:inputText id="txtUser" value="#{mbLogin.usuario}" required="true" requiredMessage="Por favor ingrese un nombre de usuario" placeholder="Nombre de usuario" /></p>
+                <p><h:outputLabel for="txtPass">Contraseña</h:outputLabel></p>
+                <!--<p><h:inputSecret styleClass="form-control" id="txtPass" value="#{mbLogin.contrasenia}" /></p>-->
+                <p><b:inputSecret styleClass="form-control" id="txtPass" required="true" requiredMessage="Por favor ingrese una contraseña" value="#{mbLogin.contrasenia}" placeholder="Contraseña" /></p>
+                <p:messages styleClass="nav navbar" closable="true" />
+                <h:commandLink action="#{mbLogin.login()}" styleClass="btn btn-default" value="Ingresar" />
+            </h:form>
+        </section>
+        <section class="footer" style="color:white">2015. Div ID Software. All rights reserved.</section>
+    </h:body>
+</html>
+

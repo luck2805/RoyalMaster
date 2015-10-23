@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2015 10:18:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.royalmaster.royalmaster.entities.Categorias" table="categorias" catalog="RoyalMaster" optimistic-lock="version">
+        <id name="idCategoria" type="java.lang.Integer">
+            <column name="idCategoria" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreCategoria" type="string">
+            <column name="nombreCategoria" length="45" not-null="true" />
+        </property>
+        <property name="descripcionCategoria" type="string">
+            <column name="descripcionCategoria" length="300" not-null="true" />
+        </property>
+        <set name="peliculases" table="peliculas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idCategoria" not-null="true" />
+            </key>
+            <one-to-many class="com.royalmaster.royalmaster.entities.Peliculas" />
+        </set>
+    </class>
+</hibernate-mapping>

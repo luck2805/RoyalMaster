@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2015 10:18:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.royalmaster.royalmaster.entities.Usuarios" table="usuarios" catalog="RoyalMaster" optimistic-lock="version">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="idUsuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="perfiles" class="com.royalmaster.royalmaster.entities.Perfiles" fetch="select">
+            <column name="idPerfil" not-null="true" />
+        </many-to-one>
+        <property name="nombreUsuario" type="string">
+            <column name="nombreUsuario" length="45" not-null="true" />
+        </property>
+        <property name="contrasenaUsuario" type="string">
+            <column name="contrasenaUsuario" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" />
+        </property>
+        <set name="peliculasXclientes" table="peliculasXCliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idCliente" not-null="true" />
+            </key>
+            <one-to-many class="com.royalmaster.royalmaster.entities.PeliculasXcliente" />
+        </set>
+    </class>
+</hibernate-mapping>
