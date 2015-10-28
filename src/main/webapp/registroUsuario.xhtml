@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <link rel="shortcut icon" href="resources/icons/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="resources/css/bootstrap.css" />
+        <link rel="stylesheet" href="resources/css/styles.css" />
+        <link rel="stylesheet" href="resources/css/animate.css" />
+        <h:outputScript library="js" name="jquery.js" />
+        <h:outputScript library="js" name="bootstrap.js" />
+    </h:head>
+    <h:body>
+        <style>
+            .html_add{
+                background: url("#{resource['img:fondo35.jpg']}") no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                 background-size: cover;
+                }
+        </style>
+        
+        <section>
+            <h:form>
+                <p:growl autoUpdate="true" />
+                        <h:panelGrid columns="2" cellpadding="5" cellspacing="5">
+                            <h:outputText value="Nombre" />
+                            <p:inputText id="txt_nombre" placeholder="Nombre del Usuario" required="true" requiredMessage="Nombre no válido" value="#{usuarios.nuevo.nombreUsuario}" validatorMessage="Nombre no valido">
+                                <f:validateRegex pattern="^\w{0,10}$" />
+                            </p:inputText>
+                            
+                            <h:outputText value="Contraseña" />
+                            <p:password binding="#{pass}" id="password" placeholder="Contraseña" value="#{usuarios.nuevo.contrasenaUsuario}" required="true"/>
+                            <p:message for="password"/>
+                            
+                            <h:outputText value="Email" />
+                            <p:inputText id="email2" value="#{usuarios.nuevo.email}" />
+                            <p:message for="email2" display="tooltip" />
+                            <h:outputText value="#{usuarios.nuevo.email}" />
+                        
+                        </h:panelGrid>
+                            <p:separator />
+                            <p:commandButton value="Volver" partialSubmit="true" process="@this" actionListener="#{usuarios.volver()}" />
+                            <p:growl id="message" showDetail="true" />
+                            <p:commandButton style="margin-top: 10px;" value="Listo" action="#{usuarios.add(usuarios.nuevo)}" update="message">
+                                <p:confirm header="Confirmación" message="Esta seguro de realizar esta acción?" icon="ui-icon-alert" />
+                            </p:commandButton>
+                            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                                <p:commandButton value="Aceptar" type="button" styleClass="ui-confirmdialog-yes"/>
+                                <p:commandButton value="Cancelar" type="button" styleClass="ui-confirmdialog-no" />
+                            </p:confirmDialog>
+                            <b:navLink>
+                                <li>
+                                    <a href="/registroUsuario.xhtml" role="menuitem" tabindex="-1"><b:iconAwesome name="plus" />Registrarce ahora.</a>
+                                </li>
+                            </b:navLink>
+            </h:form>
+        </section>
+        
+        
+        <script type="text/javascript">
+            /**
+             * Bean validator
+             */
+            PrimeFaces.validator['Email'] = {
+
+                pattern: /\S+@\S+/,
+
+                MESSAGE_ID: 'org.primefaces.examples.validate.email.message',
+
+                validate: function(element, value) {
+                    var vc = PrimeFaces.util.ValidationContext;
+
+                    if(!this.pattern.test(value)) {
+                        var msgStr = element.data('p-email-msg'),
+                        msg = msgStr ? {summary:msgStr, detail: msgStr} : vc.getMessage(this.MESSAGE_ID);
+
+                        throw msg;
+                    }
+                }
+            };
+        </script>
+    </h:body>
+</html>

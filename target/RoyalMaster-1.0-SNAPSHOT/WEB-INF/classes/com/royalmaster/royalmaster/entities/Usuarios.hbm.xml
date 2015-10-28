@@ -6,7 +6,7 @@
     <class name="com.royalmaster.royalmaster.entities.Usuarios" table="usuarios" catalog="RoyalMaster" optimistic-lock="version">
         <id name="idUsuario" type="java.lang.Integer">
             <column name="idUsuario" />
-            <generator class="identity" />
+            <generator class="increment" />
         </id>
         <many-to-one name="perfiles" class="com.royalmaster.royalmaster.entities.Perfiles" fetch="select">
             <column name="idPerfil" not-null="true" />
