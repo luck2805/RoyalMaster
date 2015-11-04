@@ -23,7 +23,7 @@ and open the template in the editor.
     <h:body styleClass="html_add">
         <style>
                 .html_add{
-                    background: url("#{resource['img:fondo35.jpg']}") no-repeat center center fixed; 
+                    background: url("#{resource['img:fondo1.jpg']}") no-repeat center center fixed; 
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                         -o-background-size: cover;
@@ -42,6 +42,8 @@ and open the template in the editor.
                 <p><b:inputSecret styleClass="form-control" id="txtPass" required="true" requiredMessage="Por favor ingrese una contraseña" value="#{mbLogin.contrasenia}" placeholder="Contraseña" /></p>
                 <p:messages styleClass="nav navbar" closable="true" />
                 <h:commandLink action="#{mbLogin.login()}" styleClass="btn btn-default" value="Ingresar" />
+                <p:separator/>
+                <a href="#{request.contextPath}/registroUsuario.xhtml" role="menuitem" tabindex="-1">Registrarse</a>
             </h:form>
         </section>
         <section class="footer" style="color:white">2015. Div ID Software. All rights reserved.</section>
