@@ -18,20 +18,17 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body styleClass="fondo1">
-        <ui:insert name="cabecera">
-            <ui:include src="templates/header.xhtml" />
-        </ui:insert>    
         <div class="ui-grid ui-grid-responsive">
             <div class="ui-grid-row">
             <div class="ui-grid-col-2"></div>
-            <div class="ui-grid-col-8">demo/images/nature/#{image}
+            <div class="ui-grid-col-8">
             <ui:insert name="cabecera">
                 <ui:include src="templates/header.xhtml" />
             </ui:insert>
             <h:form enctype="multipart/form-data">       
                 <p:growl id="msgs" showDetail="true" />               
                 <video id="movie" width="615" height="347" preload="false" controls="true">   
-                    <source id="srcMp4" type="video/mp4" src="https://www.youtube.com/watch?v=eOrNdBpGMv8"/>
+                    <source id="srcMp4" type="video/mp4" src="#{ver.nuevo.video}"/>
                 </video>                
             </h:form>
             

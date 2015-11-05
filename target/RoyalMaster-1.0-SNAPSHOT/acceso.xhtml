@@ -17,18 +17,11 @@ and open the template in the editor.
         <link rel="shortcut icon" href="resources/icons/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
-    <h:body styleClass="fondo1">
-        <ui:insert name="cabecera">
-            <ui:include src="templates/header.xhtml" />
-        </ui:insert>
-        <!--ui:insert name="home">
-            <ui:include src="templates/HomeAccess.xhtml" />
-        </ui:insert-->
-    
+    <h:body styleClass="fondo1"> 
         <div class="ui-grid ui-grid-responsive">
     <div class="ui-grid-row">
         <div class="ui-grid-col-2"></div>
-        <div class="ui-grid-col-8">demo/images/nature/#{image}
+        <div class="ui-grid-col-8">
         <ui:insert name="cabecera">
             <ui:include src="templates/header.xhtml" />
         </ui:insert>
@@ -40,58 +33,21 @@ and open the template in the editor.
                                         
     <p:accordionPanel value="#{acceso.peliculas}" var="unaPeli" >
         <p:tab title="#{unaPeli.nombrePelicula}" closable="false">
-            <h:panelGrid columns="2" cellpadding="5">
+            <h:panelGrid columns="3" cellpadding="5">
                 <f:facet name="header">
                     <p:graphicImage name="img/#{unaPeli.imagen}" />
                 </f:facet>
-                <h:outputText value="#{unaPeli.sinopsis}" />          
-                
-                    
-
+                <h:outputText value="#{unaPeli.sinopsis}" />
+                <h:commandLink action="#{ver.visualizar(unaPeli)}" styleClass="btn btn-default" value="Ver Pelicula" />                
             </h:panelGrid>
         </p:tab>
-    </p:accordionPanel>                
-                
-                <video id="movie" width="615" height="347" preload="false" controls="true">   
-       <source id="srcMp4" type="video/mp4" src="https://www.youtube.com/watch?v=eOrNdBpGMv8"/>
-</video>
-                
-                
+    </p:accordionPanel>                                
             </h:form>
             
         </div>
         <div class="ui-grid-col-2"></div>
     </div>
 </div>        
-
-
-    <!--p:carousel numVisible="1" effect="easeInStrong" headerText="Responsive" itemStyle="text-align:center">
-        <p:tab title="Godfather Part I">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="resources/img/people.png" />
-                <h:outputText
-                    value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
-                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, 
-                    but given to ruthless violence whenever anything stands against the good of the family." />
-            </h:panelGrid>
-        </p:tab>
-        <p:tab title="Godfather Part II">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="resources/img/people.png" />
-                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
-                In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
-                killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
-            </h:panelGrid>
-        </p:tab>
-        <p:tab title="Godfather Part III">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="resources/img/people.png" />
-                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
-            </h:panelGrid>
-        </p:tab>
-    </p:carousel-->
     </h:body>
         <div class="footer" style="color:#CCC">Royal Master. 2015. Todos los derechos reservados.</div>
         <!--Esto es una prueba ed merge-->
