@@ -25,8 +25,47 @@ and open the template in the editor.
             <ui:include src="templates/HomeAccess.xhtml" />
         </ui:insert-->
     
+        <div class="ui-grid ui-grid-responsive">
+    <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-8">demo/images/nature/#{image}
+        <ui:insert name="cabecera">
+            <ui:include src="templates/header.xhtml" />
+        </ui:insert>
+            <h:form enctype="multipart/form-data">       
+                <p:galleria class="migaleria" value="#{acceso.peliculas}" var="pelis" showCaption="true">
+                    <p:graphicImage name="img/#{pelis.imagen}" alt="Image Description for #{pelis.nombrePelicula}" title="#{pelis.nombrePelicula}"/>
+                </p:galleria>    
+                <p:growl id="msgs" showDetail="true" />
+                                        
+    <p:accordionPanel value="#{acceso.peliculas}" var="unaPeli" >
+        <p:tab title="#{unaPeli.nombrePelicula}" closable="false">
+            <h:panelGrid columns="2" cellpadding="5">
+                <f:facet name="header">
+                    <p:graphicImage name="img/#{unaPeli.imagen}" />
+                </f:facet>
+                <h:outputText value="#{unaPeli.sinopsis}" />          
+                
+                    
 
-    <p:carousel numVisible="1" effect="easeInStrong" headerText="Responsive" itemStyle="text-align:center">
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>                
+                
+                <video id="movie" width="615" height="347" preload="false" controls="true">   
+       <source id="srcMp4" type="video/mp4" src="https://www.youtube.com/watch?v=eOrNdBpGMv8"/>
+</video>
+                
+                
+            </h:form>
+            
+        </div>
+        <div class="ui-grid-col-2"></div>
+    </div>
+</div>        
+
+
+    <!--p:carousel numVisible="1" effect="easeInStrong" headerText="Responsive" itemStyle="text-align:center">
         <p:tab title="Godfather Part I">
             <h:panelGrid columns="2" cellpadding="10">
                 <p:graphicImage name="resources/img/people.png" />
@@ -52,7 +91,7 @@ and open the template in the editor.
                     Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
             </h:panelGrid>
         </p:tab>
-    </p:carousel>
+    </p:carousel-->
     </h:body>
         <div class="footer" style="color:#CCC">Royal Master. 2015. Todos los derechos reservados.</div>
         <!--Esto es una prueba ed merge-->

@@ -26,6 +26,13 @@
         <property name="sinopsis" type="string">
             <column name="sinopsis" length="300" not-null="true" />
         </property>
+        <property name="imagen" type="string">
+            <column name="imagen" length="100" not-null="true" />
+        </property>
+        <property name="video" type="string">
+            <column name="video" length="100" not-null="true" />
+        </property>
+
         <set name="peliculasXclientes" table="peliculasXCliente" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idPelicula" not-null="true" />
