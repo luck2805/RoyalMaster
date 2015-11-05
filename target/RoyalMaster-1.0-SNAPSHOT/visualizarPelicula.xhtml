@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html class="fondo1" xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"    
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      >
+    <h:head>
+        <title>Acceso - #{mbSession.usuario}</title>
+        <link rel="shortcut icon" href="resources/icons/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body styleClass="fondo1">
+        <ui:insert name="cabecera">
+            <ui:include src="templates/header.xhtml" />
+        </ui:insert>    
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row">
+            <div class="ui-grid-col-2"></div>
+            <div class="ui-grid-col-8">demo/images/nature/#{image}
+            <ui:insert name="cabecera">
+                <ui:include src="templates/header.xhtml" />
+            </ui:insert>
+            <h:form enctype="multipart/form-data">       
+                <p:growl id="msgs" showDetail="true" />               
+                <video id="movie" width="615" height="347" preload="false" controls="true">   
+                    <source id="srcMp4" type="video/mp4" src="https://www.youtube.com/watch?v=eOrNdBpGMv8"/>
+                </video>                
+            </h:form>
+            
+        </div>
+        <div class="ui-grid-col-2"></div>
+    </div>
+</div>        
+    </h:body>
+        <div class="footer" style="color:#CCC">Royal Master. 2015. Todos los derechos reservados.</div>
+        <!--Esto es una prueba ed merge-->
+
+</html>
