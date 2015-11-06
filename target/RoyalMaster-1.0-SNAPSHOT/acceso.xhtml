@@ -18,50 +18,43 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body styleClass="html_add">
-        
-                        <style>
-                .html_add{
-                    background: url("#{resource['img:fondo1.jpg']}") no-repeat center center fixed; 
-                    -webkit-background-size: cover;
-                    -moz-background-size: cover;
-                        -o-background-size: cover;
-                    background-size: cover;
-                }
-            </style>
-        
-        
-        
+        <style>
+            .html_add{
+                background: url("#{resource['img:fondo1.jpg']}") no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
         <div class="ui-grid ui-grid-responsive">
-    <div class="ui-grid-row">
+        <div class="ui-grid-row">
         <div class="ui-grid-col-2"></div>
         <div class="ui-grid-col-8">
-        <ui:insert name="cabecera">
-            <ui:include src="templates/header.xhtml" />
-        </ui:insert>
-            <h:form enctype="multipart/form-data">       
-                <p:galleria class="migaleria" value="#{acceso.peliculas}" var="pelis" showCaption="true">
-                    <p:graphicImage name="img/#{pelis.imagen}" alt="Image Description for #{pelis.nombrePelicula}" title="#{pelis.nombrePelicula}"/>
-                </p:galleria>    
-                <p:growl id="msgs" showDetail="true" />
-                                        
-    <p:accordionPanel value="#{acceso.peliculas}" var="unaPeli" >
-        <p:tab title="#{unaPeli.nombrePelicula}" closable="false">
-            <h:panelGrid columns="3" >
-                <f:facet name="header">
-                    <p:graphicImage name="img/#{unaPeli.imagen}"/>
-                </f:facet>
-                                    <h:outputText value="#{unaPeli.sinopsis}" />
-                    <h:commandLink action="#{ver.visualizar(unaPeli)}" styleClass="btn btn-default" value="Ver Pelicula" />                
-
-            </h:panelGrid>
-        </p:tab>
-    </p:accordionPanel>                                
-            </h:form>
-            
+            <ui:insert name="cabecera">
+                <ui:include src="templates/header.xhtml" />
+            </ui:insert>
+                <h:form enctype="multipart/form-data">       
+                    <p:galleria class="migaleria" value="#{acceso.peliculas}" var="pelis" showCaption="true">
+                        <p:graphicImage name="img/#{pelis.imagen}" alt="Image Description for #{pelis.nombrePelicula}" title="#{pelis.nombrePelicula}"/>
+                    </p:galleria>    
+                    <p:growl id="msgs" showDetail="true" />                                    
+                    <p:accordionPanel value="#{acceso.peliculas}" var="unaPeli" >
+                    <p:tab title="#{unaPeli.nombrePelicula}" closable="false">
+                        <h:panelGrid columns="3" >
+                            <f:facet name="header">
+                                <p:graphicImage name="img/#{unaPeli.imagen}"/>
+                            </f:facet>
+                            <h:outputText value="#{unaPeli.sinopsis}" />
+                            <h:commandLink action="#{ver.visualizar(unaPeli)}" styleClass="btn btn-default" value="Ver Pelicula" />                
+                        </h:panelGrid>
+                    </p:tab>
+                    </p:accordionPanel>                                
+                </h:form>  
+                </div>
+                <div class="ui-grid-col-2"></div>
         </div>
-        <div class="ui-grid-col-2"></div>
-    </div>
-</div>        
+        </div>        
     </h:body>
         <div class="footer" style="color:#CCC">Royal Master. 2015. Todos los derechos reservados.</div>
         <!--Esto es una prueba ed merge-->

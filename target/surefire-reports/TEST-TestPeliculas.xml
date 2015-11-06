@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="TestPeliculas" time="0.179" errors="1" skipped="0">
+<testsuite tests="1" failures="0" name="TestPeliculas" time="1.487" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -13,10 +13,10 @@
     <property name="user.country" value="AR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
+    <property name="test" value="TestPeliculas"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/luciano/NetBeansProjects/RoyalMaster"/>
     <property name="java.runtime.version" value="1.8.0_66-b17"/>
-    <property name="netbeans.deploy" value="true"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dnetbeans.deploy=true -Dmaven.ext.class.path=/usr/local/netbeans-8.0.2/java/maven-nblib/netbeans-eventspy.jar package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=TestPeliculas -Dmaven.ext.class.path=/usr/local/netbeans-8.0.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="TestPeliculas" name="hello" time="0.179">
+  <testcase classname="TestPeliculas" name="hello" time="1.418">
     <error message="Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister" type="org.hibernate.MappingException">org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
 	at org.hibernate.persister.internal.PersisterFactoryImpl.create(PersisterFactoryImpl.java:185)
 	at org.hibernate.persister.internal.PersisterFactoryImpl.createEntityPersister(PersisterFactoryImpl.java:135)
@@ -122,7 +122,7 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
 	at org.hibernate.tuple.entity.EntityTuplizerFactory.constructTuplizer(EntityTuplizerFactory.java:135)
 	... 48 more
-Caused by: org.hibernate.PropertyNotFoundException: Could not find a getter for granimagen in class com.royalmaster.royalmaster.entities.Peliculas
+Caused by: org.hibernate.PropertyNotFoundException: Could not find a getter for imagengrande in class com.royalmaster.royalmaster.entities.Peliculas
 	at org.hibernate.property.BasicPropertyAccessor.createGetter(BasicPropertyAccessor.java:310)
 	at org.hibernate.property.BasicPropertyAccessor.getGetter(BasicPropertyAccessor.java:304)
 	at org.hibernate.mapping.Property.getGetter(Property.java:323)
@@ -131,43 +131,51 @@ Caused by: org.hibernate.PropertyNotFoundException: Could not find a getter for 
 	at org.hibernate.tuple.entity.PojoEntityTuplizer.&lt;init&gt;(PojoEntityTuplizer.java:80)
 	... 53 more
 </error>
-    <system-err>nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration configure
+    <system-err>nov 06, 2015 11:42:02 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+nov 06, 2015 11:42:02 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.1.Final}
+nov 06, 2015 11:42:02 AM org.hibernate.cfg.Environment &lt;clinit&gt;
+INFO: HHH000206: hibernate.properties not found
+nov 06, 2015 11:42:02 AM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+nov 06, 2015 11:42:02 AM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration getConfigurationInputStream
+nov 06, 2015 11:42:02 AM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-nov 06, 2015 10:24:42 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+nov 06, 2015 11:42:02 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:02 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/Categorias.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/Peliculas.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/Visualizaciones.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/Usuarios.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/PeliculasXcliente.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/Perfiles.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration addResource
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: com/royalmaster/royalmaster/entities/Directores.hbm.xml
-nov 06, 2015 10:24:42 AM org.hibernate.cfg.Configuration doConfigure
+nov 06, 2015 11:42:03 AM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-nov 06, 2015 10:24:42 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+nov 06, 2015 11:42:03 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-nov 06, 2015 10:24:42 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+nov 06, 2015 11:42:03 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/RoyalMaster?zeroDateTimeBehavior=convertToNull]
-nov 06, 2015 10:24:42 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+nov 06, 2015 11:42:03 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=root, password=****}
-nov 06, 2015 10:24:42 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+nov 06, 2015 11:42:03 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-nov 06, 2015 10:24:42 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+nov 06, 2015 11:42:03 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-nov 06, 2015 10:24:42 AM org.hibernate.dialect.Dialect &lt;init&gt;
+nov 06, 2015 11:42:03 AM org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-nov 06, 2015 10:24:42 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+nov 06, 2015 11:42:03 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-nov 06, 2015 10:24:42 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+nov 06, 2015 11:42:03 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 </system-err>
   </testcase>

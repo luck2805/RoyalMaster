@@ -34,30 +34,27 @@ public class Peliculas  implements java.io.Serializable {
      private String sinopsis;
      private String video;
      private String imagen;
-     private String imagengrande;
      private Set peliculasXclientes = new HashSet(0);
 
     public Peliculas() {
     }
 
 	
-    public Peliculas(Categorias categorias, Directores directores, String nombrePelicula, int anioEstreno, double precioPelicula, String sinopsis, String imagengrande) {
+    public Peliculas(Categorias categorias, Directores directores, String nombrePelicula, int anioEstreno, double precioPelicula, String sinopsis) {
         this.categorias = categorias;
         this.directores = directores;
         this.nombrePelicula = nombrePelicula;
         this.anioEstreno = anioEstreno;
         this.precioPelicula = precioPelicula;
         this.sinopsis = sinopsis;
-        this.imagengrande = imagengrande;
     }
-    public Peliculas(Categorias categorias, Directores directores, String nombrePelicula, int anioEstreno, double precioPelicula, String sinopsis,String imagengrande, Set peliculasXclientes) {
+    public Peliculas(Categorias categorias, Directores directores, String nombrePelicula, int anioEstreno, double precioPelicula, String sinopsis, Set peliculasXclientes) {
        this.categorias = categorias;
        this.directores = directores;
        this.nombrePelicula = nombrePelicula;
        this.anioEstreno = anioEstreno;
        this.precioPelicula = precioPelicula;
        this.sinopsis = sinopsis;
-       this.imagengrande = imagengrande;
        this.peliculasXclientes = peliculasXclientes;
     }
    
@@ -149,7 +146,7 @@ public class Peliculas  implements java.io.Serializable {
     public void setVideo(String video){
         this.video = video;
     }
-    
+        
     @OneToMany(fetch=FetchType.LAZY, mappedBy="peliculas")
     public Set getPeliculasXclientes() {
         return this.peliculasXclientes;

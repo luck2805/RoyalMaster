@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestPeliculas
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.179 sec <<< FAILURE!
-hello(TestPeliculas)  Time elapsed: 0.179 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.487 sec <<< FAILURE!
+hello(TestPeliculas)  Time elapsed: 1.418 sec  <<< ERROR!
 org.hibernate.MappingException: Could not get constructor for org.hibernate.persister.entity.SingleTableEntityPersister
 	at org.hibernate.persister.internal.PersisterFactoryImpl.create(PersisterFactoryImpl.java:185)
 	at org.hibernate.persister.internal.PersisterFactoryImpl.createEntityPersister(PersisterFactoryImpl.java:135)
@@ -63,7 +63,7 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
 	at org.hibernate.tuple.entity.EntityTuplizerFactory.constructTuplizer(EntityTuplizerFactory.java:135)
 	... 48 more
-Caused by: org.hibernate.PropertyNotFoundException: Could not find a getter for granimagen in class com.royalmaster.royalmaster.entities.Peliculas
+Caused by: org.hibernate.PropertyNotFoundException: Could not find a getter for imagengrande in class com.royalmaster.royalmaster.entities.Peliculas
 	at org.hibernate.property.BasicPropertyAccessor.createGetter(BasicPropertyAccessor.java:310)
 	at org.hibernate.property.BasicPropertyAccessor.getGetter(BasicPropertyAccessor.java:304)
 	at org.hibernate.mapping.Property.getGetter(Property.java:323)

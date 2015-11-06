@@ -189,7 +189,7 @@
 	        box-shadow: 0 8px 6px -6px black;
 }
 .fondo1{
-                    background: url("#{resource['img:B.jpg']}") no-repeat center center fixed; 
+                    background: url("#{resource['img:fondo1.jpg']}") no-repeat center center fixed; 
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                     -o-background-size: cover;
