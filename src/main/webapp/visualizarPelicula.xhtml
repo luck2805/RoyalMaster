@@ -17,7 +17,18 @@ and open the template in the editor.
         <link rel="shortcut icon" href="resources/icons/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
-    <h:body styleClass="fondo1">
+    <h:body styleClass="html_add">
+        
+                        <style>
+                .html_add{
+                    background: url("#{resource['img:fondo1.jpg']}") no-repeat center center fixed; 
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                        -o-background-size: cover;
+                    background-size: cover;
+                }
+            </style>
+        
         <div class="ui-grid ui-grid-responsive">
             <div class="ui-grid-row">
             <div class="ui-grid-col-2"></div>
@@ -26,12 +37,13 @@ and open the template in the editor.
                 <ui:include src="templates/header.xhtml" />
             </ui:insert>
             <h:form enctype="multipart/form-data">       
-                <p:growl id="msgs" showDetail="true" />               
-                <video id="movie" width="615" height="347" preload="false" controls="true">   
+                <p:growl id="msgs" showDetail="true"/>               
+                <!--video id="movie" width="615" height="347" preload="false" controls="true" class="migaleria">   
                     <source id="srcMp4" type="video/mp4" src="#{ver.nuevo.video}"/>
-                </video>                
+                </video-->  
             </h:form>
-            
+            <p:media class="migaleria" value="https://www.youtube.com/v/eOrNdBpGMv8" width="615" height="347" player="flash"/>
+     
         </div>
         <div class="ui-grid-col-2"></div>
     </div>

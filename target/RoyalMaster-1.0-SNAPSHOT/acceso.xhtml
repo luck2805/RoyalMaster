@@ -17,7 +17,20 @@ and open the template in the editor.
         <link rel="shortcut icon" href="resources/icons/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
-    <h:body styleClass="fondo1"> 
+    <h:body styleClass="html_add">
+        
+                        <style>
+                .html_add{
+                    background: url("#{resource['img:fondo1.jpg']}") no-repeat center center fixed; 
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                        -o-background-size: cover;
+                    background-size: cover;
+                }
+            </style>
+        
+        
+        
         <div class="ui-grid ui-grid-responsive">
     <div class="ui-grid-row">
         <div class="ui-grid-col-2"></div>
@@ -33,12 +46,13 @@ and open the template in the editor.
                                         
     <p:accordionPanel value="#{acceso.peliculas}" var="unaPeli" >
         <p:tab title="#{unaPeli.nombrePelicula}" closable="false">
-            <h:panelGrid columns="3" cellpadding="5">
+            <h:panelGrid columns="3" >
                 <f:facet name="header">
-                    <p:graphicImage name="img/#{unaPeli.imagen}" />
+                    <p:graphicImage name="img/#{unaPeli.imagen}"/>
                 </f:facet>
-                <h:outputText value="#{unaPeli.sinopsis}" />
-                <h:commandLink action="#{ver.visualizar(unaPeli)}" styleClass="btn btn-default" value="Ver Pelicula" />                
+                                    <h:outputText value="#{unaPeli.sinopsis}" />
+                    <h:commandLink action="#{ver.visualizar(unaPeli)}" styleClass="btn btn-default" value="Ver Pelicula" />                
+
             </h:panelGrid>
         </p:tab>
     </p:accordionPanel>                                
