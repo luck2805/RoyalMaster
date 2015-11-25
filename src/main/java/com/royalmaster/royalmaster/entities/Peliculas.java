@@ -34,6 +34,7 @@ public class Peliculas  implements java.io.Serializable {
      private String sinopsis;
      private String video;
      private String imagen;
+     private String imagengrande;
      private Set peliculasXclientes = new HashSet(0);
 
     public Peliculas() {
@@ -146,7 +147,16 @@ public class Peliculas  implements java.io.Serializable {
     public void setVideo(String video){
         this.video = video;
     }
-        
+
+    @Column(name="imagengrande", nullable=false, length=500)
+    public String getImagengrande() {
+        return imagengrande;
+    }
+
+    public void setImagengrande(String imagengrande) {
+        this.imagengrande = imagengrande;
+    }    
+    
     @OneToMany(fetch=FetchType.LAZY, mappedBy="peliculas")
     public Set getPeliculasXclientes() {
         return this.peliculasXclientes;

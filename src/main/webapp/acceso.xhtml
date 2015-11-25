@@ -36,7 +36,7 @@ and open the template in the editor.
             </ui:insert>
                 <h:form enctype="multipart/form-data">       
                     <p:galleria class="migaleria" value="#{acceso.peliculas}" var="pelis" showCaption="true">
-                        <p:graphicImage name="img/#{pelis.imagen}" alt="Image Description for #{pelis.nombrePelicula}" title="#{pelis.nombrePelicula}"/>
+                        <p:graphicImage name="img/#{pelis.imagengrande}" alt="#{pelis.sinopsis}" title="#{pelis.nombrePelicula}"/>
                     </p:galleria>    
                     <p:growl id="msgs" showDetail="true" />                                    
                     <p:accordionPanel value="#{acceso.peliculas}" var="unaPeli" >

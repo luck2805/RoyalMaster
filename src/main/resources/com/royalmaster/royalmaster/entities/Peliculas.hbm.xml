@@ -32,6 +32,9 @@
         <property name="video" type="string">
             <column name="video" length="100" not-null="true" />
         </property>
+        <property name="imagengrande" type="string">
+            <column name="imagengrande" length="500" not-null="true" />
+        </property>
         <set name="peliculasXclientes" table="peliculasXCliente" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idPelicula" not-null="true" />
