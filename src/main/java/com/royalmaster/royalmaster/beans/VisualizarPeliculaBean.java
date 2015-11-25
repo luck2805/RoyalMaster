@@ -22,6 +22,15 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class VisualizarPeliculaBean implements Serializable{
     private Peliculas nuevo;
+    private String url;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
     
     public Peliculas getNuevo(){
         return nuevo;
@@ -37,7 +46,9 @@ public class VisualizarPeliculaBean implements Serializable{
     }    
     
     public String visualizar(Peliculas unaPeli){
-        this.nuevo = unaPeli;
+        
+        nuevo = unaPeli;
+        url = nuevo.getVideo();
         return "visualizarPelicula";
     }    
     
